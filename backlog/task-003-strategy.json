@@ -1,0 +1,7 @@
+{
+  "id": "task-003",
+  "title": "Implementation Strategy & Architecture",
+  "description": "Draft a technical design document for the Normalizing Flow integrator. Specify the flow architecture (e.g., RealNVP, MAF), the training objective, and the integration points within the RIFT codebase. Define the verification plan using .travis/test-integrate.sh.",
+  "priority": "Medium",
+  "status": "backlog"
+}

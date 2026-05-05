@@ -1,0 +1,7 @@
+{
+  "id": "task-001",
+  "title": "Discovery and Interface Analysis",
+  "description": "Locate the target repo 'oshaughn/research-projects-RIT', clone it, and analyze the interface of 'MonteCarloMarginalizeCode/Code/RIFT/integrators/mcsamplerAdaptiveVolume.py'. Document the expected inputs, outputs, and method signatures that the new Normalizing Flow integrator must match.",
+  "priority": "High",
+  "status": "backlog"
+}
