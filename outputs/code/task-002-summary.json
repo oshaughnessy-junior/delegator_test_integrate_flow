@@ -1,0 +1,33 @@
+{
+  "task_id": "task-002",
+  "title": "Problem Identification & Gap Analysis",
+  "status": "done",
+  "owner": "COS-MATH2519.ad.rit.edu",
+  "completed_by": "coding-agent-unsafe",
+  "completed_at": "2026-05-05T20:17:00-04:00",
+  "result": "Gap analysis of VARAHA vs Normalizing Flow sampling in RIFT. Full report at outputs/code/task-002-gap-analysis.md.",
+  "artefacts": [
+    "outputs/code/task-002-gap-analysis.md",
+    "outputs/code/task-002-summary.json"
+  ],
+  "key_findings": [
+    "VARAHA uses uniform hypercube with threshold-driven volume pruning (no learned proposal)",
+    "NFlow uses MaskedAutoregressiveTransform trained on weighted samples (learned proposal)",
+    "Drop-in replacement NOT possible due to different draw signatures and weight correction terms",
+    "Both lack GPU sampling, checkpointing, and hybrid sampling modes",
+    "Minimum 10 valid samples required after weight filtering for NF training",
+    "Flow training triggered every chunk while n_adapt > 0, data = last n_history samples"
+  ],
+  "files_analyzed": [
+    "MonteCarloMarginalizeCode/Code/RIFT/integrators/mcsamplerAdaptiveVolume.py",
+    "MonteCarloMarginalizeCode/Code/RIFT/integrators/mcsamplerNFlow.py",
+    "README.md"
+  ],
+  "integration_points_identified": [
+    "Training data pipeline (sample accumulation, weight scaling, filtering)",
+    "Sampling loop modification (NF updates per chunk vs VARAHA implicit)",
+    "GPU sampling parity",
+    "Checkpoint/resume for flow state",
+    "Hybrid burn-in then NF proposal"
+  ]
+}
