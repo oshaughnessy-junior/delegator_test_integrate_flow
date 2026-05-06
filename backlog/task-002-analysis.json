@@ -3,5 +3,6 @@
   "title": "Problem Identification & Gap Analysis",
   "description": "Compare the current adaptive volume sampling logic in mcsamplerAdaptiveVolume.py with the proposed Normalizing Flow approach. Identify the specific data points needed for training the flow adaptively and how the sampling loop should be modified to incorporate the flow's proposal distribution.",
   "priority": "High",
-  "status": "backlog"
+  "status": "in-progress",
+  "owner": "COS-MATH2519.ad.rit.edu"
 }
